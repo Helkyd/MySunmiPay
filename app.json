@@ -9,14 +9,16 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.helkyd.MySunmiPay"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.helkyd.MySunmiPay"
     },
     "web": {
       "bundler": "metro",
@@ -34,9 +36,16 @@
           "backgroundColor": "#ffffff"
         }
       ]
+
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "b0b05769-1f34-45a7-836b-ab8f54d6b95b"
+      }
     }
   }
 }

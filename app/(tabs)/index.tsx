@@ -6,7 +6,29 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
+import { useEffect } from 'react';
+import { NativeModules } from 'react-native';
+const { SunmiPay } = NativeModules;
+//const { withSunmiPayLib } = NativeModules;
+
 export default function HomeScreen() {
+useEffect(() => {
+    // Call the native method
+    console.log('All Native Modules:', Object.keys(NativeModules));
+    const startPayment = async () => {
+      try {
+        console.log('Starting EMV process...');
+        const result = await SunmiPay.startEMV();
+        console.log('EMV result:', result);
+      } catch (error) {
+        console.error('EMV error:', error);
+      }
+    };
+
+    startPayment();
+
+  }, []);
+
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
